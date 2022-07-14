@@ -29,15 +29,15 @@ HTML 元素的組成
 [HTML語法整理表](https://www.csie.ntu.edu.tw/~r91112/myDownload/WEB/html.html)
 
 巢狀元素
-```=HTML
+```HTML
 <p>My cat is <strong>very</strong> grumpy.</p>
 ```
 空元素 (有兩個屬性，但是沒有結束標籤，也沒有裡面的內容。)
-```=HTML
+```HTML
 <img src="images/firefox-icon.png" alt="My test image">
 ```
 HTML 文件的架構
-```=HTML
+```HTML
 <!DOCTYPE html> 
 <html>
   <head>
@@ -64,10 +64,64 @@ HTML 文件的架構
     - 無順序性清單（Unordered lists）`<ul></ul>`
     - 有順序性清單（Ordered lists）`<ol></ol>`
 
-    ```
+    ```HTML
     <ul>
         <li>technologists</li>
         <li>thinkers</li>
         <li>builders</li>
     </ul>
     ```
+
+連結 (link)
+```HTML
+<a href="https://www.mozilla.org/zh-TW/about/manifesto/">Mozilla Manifesto</a>
+```
+
+### CSS 基本概念 [(ref)](https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/CSS_basics)
+ 既非標準程式語言，也不是標記語言, 而是一種風格頁面語言（style sheet language）：它能讓你在 HTML 文件中的元素（element）上套用不同的頁面樣式（style）。
+  
+ 例如, 當想要將 HTML 頁面上所有段落元素（paragraph elements）裡的文字全部轉換成紅色，你會在CSS裡寫:
+ ```CSS
+  p {
+  color: red;
+  }
+ ```
+ 建立新的檔案 style.css，並存到你的 styles 目錄。
+
+ 將 CSS 套用在 HTML 文件上
+```HTML
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+```
+
+ ![](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/css-declaration-small.png)
+
+ 整個架構我們稱為規則集 (rule set)
+
+ - 選擇器（Selector）- 將決定你 HTML 裡什麼元素將被你接下來的設定影響（在這個範例中,就是 段落元素 p）。
+ - 宣告（Declaration） - 單一個規則，例如 `color: red;`
+ - 屬性 (Properties) - 修改屬性是改變你HTML元素的一種方法 . (在這範例中, color 是段落（p）元素的一種屬性.)
+ - 屬性值 (Property value) - 位於屬性右邊，在冒號（:）之後，從眾多的可能樣式選出一個給予屬性
+  
+每一個規則當中，除了選擇器名稱以外，其他都必須被大括號（{}）給包住，在每一個規則裡面可以包含有許多宣告，但不同的宣告之間必須使用分號 (;) 來區分。
+rule 可以有多個宣告
+```css
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+```
+rule 可以選擇多個元素
+```css
+p,li,h1 {
+  color: red;
+}
+```
+[選擇器的不同類型](https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/CSS_basics#%E9%81%B8%E6%93%87%E5%99%A8%E7%9A%84%E4%B8%8D%E5%90%8C%E9%A1%9E%E5%9E%8B)
+ 
+ CSS: all about boxes
+![](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/box-model.png)
+
+- padding:內容周圍的空格（例如，段落文字周圍）
+- border: 位於矩形內容外部的實線
+- margin: 元素外部的空間
