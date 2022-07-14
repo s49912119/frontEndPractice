@@ -125,3 +125,5 @@ p,li,h1 {
 - padding:內容周圍的空格（例如，段落文字周圍）
 - border: 位於矩形內容外部的實線
 - margin: 元素外部的空間
+
+[網頁設計師會用到的VSCODE與常用套件](http://blog.lokiui.com/2019/10/day0-vscode.html)
